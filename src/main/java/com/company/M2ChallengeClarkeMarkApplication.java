@@ -9,7 +9,7 @@ public class M2ChallengeClarkeMarkApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(M2ChallengeClarkeMarkApplication.class, args);
-		System.out.println("Josh was Zonked! ;)");
+		System.out.println("Servers Running! ;)");
 	}
 
 }
