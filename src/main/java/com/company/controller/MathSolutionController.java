@@ -68,13 +68,13 @@ public class MathSolutionController {
     @ResponseStatus(value = HttpStatus.CREATED)
     public MathSolution multiplication(@RequestBody MathSolution multiply) {
 
-        //        if(multiply.getOperand1() <= 0 && multiply.getOperand2() <= 0) {
-//            throw new IllegalArgumentException("You must enter a number greater then 0 in both fields Operand1 and Operand2.");
-//        } else if (multiply.getOperand1() <= 0) {
-//            throw new IllegalArgumentException("You must enter a number greater then 0 in Operand1 field.");
-//        } else if (multiply.getOperand2() <= 0) {
-//            throw new IllegalArgumentException("You must enter a number greater then 0 in Operand2 field.");
-//        }
+        if(multiply.getOperand1() <= 0 && multiply.getOperand2() <= 0) {
+            throw new IllegalArgumentException("You must enter a number greater then 0 in both fields Operand1 and Operand2.");
+        } else if (multiply.getOperand1() <= 0) {
+            throw new IllegalArgumentException("You must enter a number greater then 0 in Operand1 field.");
+        } else if (multiply.getOperand2() <= 0) {
+            throw new IllegalArgumentException("You must enter a number greater then 0 in Operand2 field.");
+        }
 
         multiply.setOperation("multiply");
         multiply.setAnswer(multiply.getOperand1() * multiply.getOperand2());

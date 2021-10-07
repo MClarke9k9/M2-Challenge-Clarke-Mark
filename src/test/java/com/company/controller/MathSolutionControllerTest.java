@@ -219,42 +219,42 @@ public class MathSolutionControllerTest {
                 .andDo(print())
                 .andExpect(status().isUnprocessableEntity());
     }
-//    @Test
-//    public void shouldReturn422ForMissingOperand1OnMultiplyMethod() throws Exception {
-//
-//        MathSolution outputMathSolution = new MathSolution();
-//        outputMathSolution.setOperand1(0);
-//        outputMathSolution.setOperand2(1);
-//
-//        String inputJson = mapper.writeValueAsString(outputMathSolution);
-//
-//        // ACT
-//        mockMvc.perform(
-//                        post("/multiply")
-//                                .content(inputJson)
-//                                .contentType(MediaType.APPLICATION_JSON)
-//                )
-//                .andDo(print())
-//                .andExpect(status().isUnprocessableEntity());
-//    }
-//    @Test
-//    public void shouldReturn422ForMissingOperand2OnMultiplyMethod() throws Exception {
-//
-//        MathSolution outputMathSolution = new MathSolution();
-//        outputMathSolution.setOperand1(1);
-//        outputMathSolution.setOperand2(0);
-//
-//        String inputJson = mapper.writeValueAsString(outputMathSolution);
-//
-//        // ACT
-//        mockMvc.perform(
-//                        post("/multiply")
-//                                .content(inputJson)
-//                                .contentType(MediaType.APPLICATION_JSON)
-//                )
-//                .andDo(print())
-//                .andExpect(status().isUnprocessableEntity());
-//    }
+    @Test
+    public void shouldReturn422ForMissingOperand1OnMultiplyMethod() throws Exception {
+
+        MathSolution outputMathSolution = new MathSolution();
+        outputMathSolution.setOperand1(0);
+        outputMathSolution.setOperand2(1);
+
+        String inputJson = mapper.writeValueAsString(outputMathSolution);
+
+        // ACT
+        mockMvc.perform(
+                        post("/multiply")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+    @Test
+    public void shouldReturn422ForMissingOperand2OnMultiplyMethod() throws Exception {
+
+        MathSolution outputMathSolution = new MathSolution();
+        outputMathSolution.setOperand1(1);
+        outputMathSolution.setOperand2(0);
+
+        String inputJson = mapper.writeValueAsString(outputMathSolution);
+
+        // ACT
+        mockMvc.perform(
+                        post("/multiply")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
     @Test
     public void shouldReturn422ForMissingOperand1OnDivideMethod() throws Exception {
 
@@ -347,24 +347,24 @@ public class MathSolutionControllerTest {
                 .andDo(print())
                 .andExpect(status().isUnprocessableEntity());
     }
-//    @Test
-//    public void shouldReturn422ForMissingBothOnMultiplyMethod() throws Exception {
-//
-//        MathSolution outputMathSolution = new MathSolution();
-//        outputMathSolution.setOperand1(0);
-//        outputMathSolution.setOperand2(0);
-//
-//        String inputJson = mapper.writeValueAsString(outputMathSolution);
-//
-//        // ACT
-//        mockMvc.perform(
-//                        post("/multiply")
-//                                .content(inputJson)
-//                                .contentType(MediaType.APPLICATION_JSON)
-//                )
-//                .andDo(print())
-//                .andExpect(status().isUnprocessableEntity());
-//    }
+    @Test
+    public void shouldReturn422ForMissingBothOnMultiplyMethod() throws Exception {
+
+        MathSolution outputMathSolution = new MathSolution();
+        outputMathSolution.setOperand1(0);
+        outputMathSolution.setOperand2(0);
+
+        String inputJson = mapper.writeValueAsString(outputMathSolution);
+
+        // ACT
+        mockMvc.perform(
+                        post("/multiply")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
     @Test
     public void shouldReturn422ForMissingBothOnDivideMethod() throws Exception {
 
