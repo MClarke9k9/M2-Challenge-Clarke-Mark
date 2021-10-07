@@ -1,6 +1,7 @@
 package com.company.controller;
 
 
+import com.company.exceptions.NotFoundException;
 import com.company.models.Month;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +45,10 @@ public class MonthController {
             if(month.getMonthNumber() == monthNumber) {
                 foundMonth = month;
                 break;
+            } else if (monthNumber > 13){
+                throw new IllegalArgumentException("There are only 12 Months in a year.");
+            } else if (monthNumber == 0) {
+                throw new IllegalArgumentException("You must input a number between 1 and 12.");
             }
         }
         return foundMonth;

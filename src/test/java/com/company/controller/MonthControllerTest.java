@@ -79,6 +79,41 @@ public class MonthControllerTest {
     }
 
 
+//    @Test
+//    public void shouldReturnMonths() throws Exception {
+//
+//        Month outputMonth = new Month();
+//        outputMonth.setMonth("February");
+//        outputMonth.setMonthNumber(2);
+//
+//        String outputJson = mapper.writeValueAsString(outputMonth);
+//
+//        // ACT
+//        mockMvc.perform(get("/month/2"))
+//                .andDo(print())
+//                .andExpect(status().isOk())                     // ASSERT that we got back 200 OK.
+//                .andExpect(content().json(outputJson));         // ASSERT that what we're expecting is what we got back.
+//
+//    }
 
+    @Test
+    public void shouldReturn422ForNoInputMonthNumber() throws Exception {
+
+
+        // ACT
+        mockMvc.perform(get("/month/0"))
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldReturn422ForInvalidInputMonthNumber() throws Exception {
+
+
+        // ACT
+        mockMvc.perform(get("/month/17"))
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
 
 }
